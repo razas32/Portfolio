@@ -344,12 +344,27 @@ nav ul li a:hover {
 
 @media (max-width: 768px) {
     header {
-        padding-top: 80px; /* Increased to account for nav bar */
-        min-height: auto; /* Allow header to shrink on mobile */
+        min-height: 100vh; /* Ensure full viewport height */
+        padding-top: 100px; /* Increase top padding */
+        padding-bottom: 80px; /* Add bottom padding */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content vertically */
     }
 
     .container {
-        padding-top: 25px; /* Remove extra padding */
+        padding-top: 0px; /* Remove extra padding */
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Increase gap between elements */
+    }
+
+    .text-content {
+        max-width: 100%;
+        text-align: center;
     }
 
     h1 {
@@ -367,6 +382,7 @@ nav ul li a:hover {
     .profile-picture {
         width: 250px;
         height: 343px;
+        margin-bottom: 20px; /* Add space below the picture */
     }
 
     .header-socials {
@@ -377,6 +393,10 @@ nav ul li a:hover {
         opacity: 0;
         animation: fadeIn 0.5s ease forwards;
         animation-delay: 1s;
+    }
+
+    #about {
+        padding-top: 50px; /* Add some space above the About Me section */
     }
 }
 
