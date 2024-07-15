@@ -345,11 +345,11 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     header {
         min-height: 100vh; /* Ensure full viewport height */
-        padding-top: 100px; /* Increase top padding */
+        padding-top: 80px; /*  top padding */
         padding-bottom: 80px; /* Add bottom padding */
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Center content vertically */
+        justify-content: flex start; 
     }
 
     .container {
@@ -368,7 +368,8 @@ nav ul li a:hover {
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 4.5rem;
+        margin-bottom: 10px;
     }
 
     h2 {
