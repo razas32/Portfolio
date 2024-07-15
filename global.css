@@ -349,7 +349,7 @@ nav ul li a:hover {
     }
 
     .container {
-        padding-top: 0; /* Remove extra padding */
+        padding-top: 15px; /* Remove extra padding */
     }
 
     h1 {
