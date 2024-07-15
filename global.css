@@ -13,10 +13,6 @@
     box-sizing: border-box;
 }
 
-html {
-    font-size: 16px;
-}
-
 body {
     font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
     line-height: 1.6;
@@ -33,16 +29,16 @@ body {
 }
 
 header {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
-    padding: 100px 0;
 }
 
 .header-content {
     display: flex;
+    margin-left: 120px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
 }
 
@@ -57,10 +53,11 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: 5rem;
+    margin-bottom: 0rem;
     animation: glow 4s infinite;
 }
+
 
 h2 {
     font-size: 2.5rem;
@@ -75,22 +72,18 @@ h3 {
 
 nav {
     position: fixed;
-    top: 20px;
-    left: 0;
-    right: 0;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
     z-index: 1000;
-    background-color: rgba(2, 19, 43, 0.9);
-    padding: 10px 0;
 }
 
 nav ul {
     list-style-type: none;
-    display: flex;
-    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin-bottom: 20px;
 }
 
 nav ul li a {
@@ -107,8 +100,9 @@ nav ul li a:hover {
 
 .profile-picture {
     border: 5px solid #dfdfdf;
-    width: 300px;
-    height: 412px;
+    width: 375px;
+    height: 515px;
+    margin-left: 120px;
     position: relative;
     overflow: hidden;
 }
@@ -144,11 +138,11 @@ nav ul li a:hover {
 }
 
 .section {
-    padding: 80px 0;
+    padding: 100px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.project-item, .experience-item {
+.project-item {
     margin-bottom: 30px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.05);
@@ -156,16 +150,16 @@ nav ul li a:hover {
     transition: transform 0.3s ease;
 }
 
-.project-item:hover, .experience-item:hover {
+.project-item:hover {
     transform: translateY(-5px);
 }
 
-.project-item h3, .experience-item h3 {
+.project-item h3 {
     color: var(--highlight-color);
     margin-bottom: 0.5rem;
 }
 
-.project-item p, .experience-item p {
+.project-item p {
     margin-bottom: 1rem;
 }
 
@@ -232,6 +226,27 @@ nav ul li a:hover {
     color: var(--highlight-color);
 }
 
+.experience-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+}
+
+.experience-item h3 {
+    color: var(--highlight-color);
+    margin-bottom: 0.5rem;
+}
+
+.experience-item p {
+    margin-bottom: 1rem;
+}
+
 .experience-item ul {
     list-style-type: none;
 }
@@ -279,72 +294,55 @@ nav ul li a:hover {
 }
 
 @media (max-width: 1200px) {
-    html {
-        font-size: 14px;
+    .container {
+        width: calc(100% - 100px);
+        margin-left: 100px;
     }
     
-    .header-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .text-content {
-        max-width: 100%;
-        margin-bottom: 40px;
-    }
-    
-    .profile-picture {
-        margin: 0 auto;
+    nav {
+        background-color: var(--bg-color);
+        padding: 10px;
     }
 }
 
 @media (max-width: 768px) {
-    html {
-        font-size: 12px;
-    }
-
     .container {
         width: 100%;
-        padding: 0 20px;
+        margin-left: 0;
+        padding-top: 60px;
     }
 
-    h1 {
-        font-size: 3rem;
+    nav {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        transform: none;
+        padding: 10px 0;
     }
 
-    h2 {
-        font-size: 2rem;
+    nav ul {
+        display: flex;
+        justify-content: space-around;
     }
 
-    .profile-picture {
-        width: 250px;
-        height: 343px;
+    nav ul li {
+        margin-bottom: 0;
     }
 
-    .social-icons {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    html {
-        font-size: 10px;
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    .experience-item, .project-item {
-        padding: 15px;
+    .text-content {
+        max-width: 100%;
     }
 
     .profile-picture {
-        width: 200px;
-        height: 275px;
+        margin-left: 0;
+        margin-top: 20px;
     }
+
+    
 }
