@@ -44,7 +44,8 @@
                     </p>
                 </div>
                 <div class="profile-picture">
-                    <img src="./images/pfp.JPG" alt="Ali Raza">
+                    <img src="./images/pfp1.jpg" alt="Ali Raza" class="profile-img active">
+                    <img src="./images/pfp2.jpg" alt="Ali Raza" class="profile-img">
                 </div>
             </div>
         </header>
@@ -53,7 +54,7 @@
             <h2>About Me</h2>
             <p>Hey, I'm Ali, a 22-year-old engineering student based in Toronto, driven by my love for technology and its transformative nature. With aspirations as an entrepreneur, I'm constantly thinking of ways to build & innovate. My personality is curious, I love to learn & solve complex problems, aiming to create impactful solutions. I'm especially interested in AI & machine learning technology. My dream is to further leverage the power of this technology to change the world 🌎 - two industries in specific, auto 🚗, and education 📚. Both personal passions of mine. This site will highlight my progression as a young professional, along with some passions & projects.</p>
             <br>
-            <p>When I'm not at my computer, you can find me trading cryptocurrency, playing Rocket Leauge (my favourite game), or planning out a new computer build. Basically, I'm always on my computer... Just kidding. In all seriousness, I love working out, playing soccer, hanging out with my friends, driving around the city, drinking coffee, travelling the world & so much more. I'm doing my best to create great memories & to live a life I could look back and smile about, as we all are.</p>
+            <p>When I'm not at my computer, you can find me trading cryptocurrencies, playing Rocket Leauge (my favourite game), or planning out upgrades to my office setup (I call it my lab). Basically, I'm always at my computer... Just kidding. In all seriousness, I love working out, playing soccer, hanging out with my wife & friends, driving around the city, travelling the world & so much more. I'm doing my best to create great memories & to live a life I could look back and smile about, as we all are.</p>
             <br>
             <p>Follow my journey! My socials can be found below, feel free to message me for insights/opportunities or just to chat. Those who know me, know I love a good conversation. Humans are social beings after all. <3 </p>
             <div class="social-icons">
@@ -69,22 +70,24 @@
                 <h3>Data Analyst</h3>
                 <p>Vanguard Financial | Internship | May 2023 - Aug 2023 | Mississauga, Ontario, Canada | Hybrid</p>
                 <ul>
-                    <li>Worked with the accounting team at Vanguard Financial</li>
-                    <li>Leveraged advanced scripting skills in Python, Go, and SQL</li>
-                    <li>Streamlined data manipulation, analysis, and visualization of complex financial datasets</li>
-                    <li>Demonstrated problem-solving abilities by developing custom scripts to automate repetitive tasks</li>
+                    <li>Assisted in managing financial records for 30+ business clients, ensuring compliance with Canadian accounting standards</li>
+                    <li>Developed Excel macros using VBA to streamline monthly reporting processes</li>
+                    <li>Created a Python script to automate the reconciliation of bank statements, processing an average of 1,000 transactions per week with > 99% accuracy</li>
+                    <li>Contributed to implementing a new SQL database system for improved data organization & data migration</li>
+                    <li>Assisted in preparing 15+ corporate tax returns</li>
+                    <li>Conducted basic data analysis on accounts receivable and presented findings</li>
                 </ul>
             </div>
             <div class="experience-item">
                 <h3>B2B Marketing Manager</h3>
                 <p>The Rec Source | Contract Part-time | Jun 2022 - Dec 2022 | GTA, Ontario, Canada | Hybrid</p>
                 <ul>
-                    <li>Drove sales and marketing initiatives at The Rec Source</li>
-                    <li>Secured multiple high-value contracts, outperforming industry benchmarks</li>
+                    <li>Drove sales and marketing initiatives for my team at The Rec Source</li>
+                    <li>Secured 4 high-value contracts ($100k+), outperforming industry benchmarks</li>
                     <li>Extensive travel to various company warehouses for promotion and sales of customized workforce solutions</li>
                     <li>Initiated and led productive meetings with HR managers across Ontario</li>
                     <li>Fostered strong relationships to drive client loyalty and growth</li>
-                    <li>Oversaw and mentored a team of three marketing representatives</li>
+                    <li>Oversaw and mentored a team of 3 marketing representatives</li>
                     <li>Imparted sales best practices and collaborated in strategizing to enhance sales approach</li>
                 </ul>
             </div>
@@ -142,9 +145,9 @@
                     <span class="skill-tag">Machine Learning</span>
                     <span class="skill-tag">RLGym</span>
                 </div>
-                <a href="https://github.com/razas32/franky-bot" class="project-link" target="_blank">
-                    <i class="fab fa-github"></i> View on GitHub
-                </a>
+                <span class="project-link">
+                    <i class="fas fa-lock"></i> Private Repository
+                </span>
             </div>
 
         
@@ -241,8 +244,8 @@
             const dx = mouseX - cursorX;
             const dy = mouseY - cursorY;
     
-            cursorX += dx * 0.1;
-            cursorY += dy * 0.1;
+            cursorX += dx * 0.2;
+            cursorY += dy * 0.2;
     
             cursorGlow.style.transform = `translate(${cursorX - 180}px, ${cursorY - 180}px)`;
     
@@ -250,4 +253,20 @@
         }
     
         animateCursor();
+    </script>
+
+    <script>
+        function cycleImages() {
+            const images = document.querySelectorAll('.profile-img');
+            let currentIndex = 0;
+
+            setInterval(() => {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }, 5000); // Change image every 3 seconds
+        }
+
+        // Start the cycle when the page loads
+        window.addEventListener('load', cycleImages);
     </script>
