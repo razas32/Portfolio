@@ -5,7 +5,7 @@
     --heading-color: #ccd6f6;
     --highlight-color: #e3e7f7;
     --glow-color: #35b2ff;
-    --cursor-glow-color: #081a3f1e;
+    --cursor-glow-color: #09265e3d;
 }
 
 * {
@@ -13,6 +13,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
 
 body {
     font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
@@ -400,14 +404,17 @@ nav ul li a:hover {
 
 @media (max-width: 1200px) {
     .container {
-        width: 100%;
-        margin-left: 0;
+        width: 97%;
+        max-width: none;
+        margin: 0 auto;
+        padding: 0 20px;
     }
     
     .header-content {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        gap: 20px; /* Reduced gap for mobile */
+        gap: 20px;
     }
     
     .text-content {
@@ -418,7 +425,52 @@ nav ul li a:hover {
     .profile-picture {
         margin-left: 0;
     }
+
+    .text-content {
+        max-width: 50%;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .profile-picture {
+        width: 300px;
+        height: 412px;
+    }
+
+    .header-content {
+        flex-direction: row;
+        justify-content: center; /* Center content horizontally */
+        align-items: center;
+        gap: 5%; /* Use percentage for more flexible spacing */
+    }
+
+    .profile-img {
+        width: 100%;
+        height: auto;
+    }
+
+    
+    
+
+    
+
 }
+
 
 @media (max-width: 768px) {
     header {
@@ -432,6 +484,10 @@ nav ul li a:hover {
 
     .container {
         padding-top: 0px; /* Remove extra padding */
+    }
+
+    .section {
+        padding: 40px 0;
     }
 
     .header-content {
@@ -486,7 +542,8 @@ nav ul li a:hover {
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 3rem;
+        margin-bottom: 10px;
     }
 
     h2 {
@@ -514,6 +571,8 @@ nav ul li a:hover {
 
     
 }
+
+
 
 @keyframes fadeIn {
     to {
