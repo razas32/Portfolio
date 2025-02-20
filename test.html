@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Enhanced Voxel Strawberry with Bloom</title>
+    <style>
+      body { margin: 0; overflow: hidden; }
+      canvas { display: block; }
+    </style>
+    <!-- Import map to resolve bare module specifiers -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.152.0/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <script type="module">
+      // Now the "three" specifier is mapped correctly.
+      import * as THREE from 'three';
+      import { OrbitControls } from 'https://unpkg.com/three@0.152.0/examples/jsm/controls/OrbitControls.js';
+      import { EffectComposer } from 'https://unpkg.com/three@0.152.0/examples/jsm/postprocessing/EffectComposer.js';
+      import { RenderPass } from 'https://unpkg.com/three@0.152.0/examples/jsm/postprocessing/RenderPass.js';
+      import { UnrealBloomPass } from 'https://unpkg.com/three@0.152.0/examples/jsm/postprocessing/UnrealBloomPass.js';
+
+      // ----- Scene Setup -----
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x222222); // Dark background for bloom
+
+      const camera = new THREE.PerspectiveCamera(
+        45,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      camera.position.set(12, 10, 12);
+      camera.lookAt(0, 3, 0);
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.toneMapping = THREE.ReinhardToneMapping;
+      document.body.appendChild(renderer.domElement);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+
+      // ----- Postprocessing Setup -----
+      const composer = new EffectComposer(renderer);
+      composer.addPass(new RenderPass(scene, camera));
+      const bloomPass = new UnrealBloomPass(
+        new THREE.Vector2(window.innerWidth, window.innerHeight),
+        0.8, 0.4, 0.85
+      );
+      composer.addPass(bloomPass);
+
+      // ----- Materials -----
+      const redMaterial = new THREE.MeshStandardMaterial({
+        color: 0x8B0000, // Dark red
+        roughness: 0.7,
+        metalness: 0.1
+      });
+      const blackMaterial = new THREE.MeshStandardMaterial({
+        color: 0x000000,
+        roughness: 0.8,
+        metalness: 0.0
+      });
+      const greenMaterial = new THREE.MeshStandardMaterial({
+        color: 0x00aa00,
+        roughness: 0.6,
+        metalness: 0.1
+      });
+
+      // ----- Build the Strawberry Body (Voxel Red Fruit) -----
+      const strawberryBody = new THREE.Group();
+      const cubeSize = 1;
+      const cubeGeo = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+
+      // Define layers (from bottom to near crown): bottom is tapered (narrow) and fruit widens upward.
+      const redLayers = [
+        { y: 0, radius: 0.8 },
+        { y: 1, radius: 1.8 },
+        { y: 2, radius: 2.5 },
+        { y: 3, radius: 2.8 },
+        { y: 4, radius: 2.6 },
+        { y: 5, radius: 2.2 }
+      ];
+
+      redLayers.forEach(layer => {
+        const y = layer.y;
+        const baseRadius = layer.radius;
+        const range = Math.ceil(baseRadius) + 1;
+        for (let x = -range; x <= range; x++) {
+          for (let z = -range; z <= range; z++) {
+            // Slight random offset for irregularity.
+            const randomOffset = (Math.random() - 0.5) * 0.4;
+            const effectiveRadius = baseRadius + randomOffset;
+            const dist = Math.sqrt(x * x + z * z);
+            if (dist < effectiveRadius) {
+              const cube = new THREE.Mesh(cubeGeo, redMaterial.clone());
+              cube.position.set(x, y, z);
+              // Place seeds only on layers 2 to 4, near the perimeter, with a 5% chance.
+              if (y >= 2 && y <= 4 && (baseRadius - dist) < 0.3 && Math.random() < 0.05) {
+                cube.material = blackMaterial.clone();
+                // Scale seeds down relative to main cubes.
+                cube.scale.set(0.3, 0.3, 0.3);
+              }
+              strawberryBody.add(cube);
+            }
+          }
+        }
+      });
+
+      // ----- Build the Stem & Leaves (Green Crown) -----
+      const strawberryTop = new THREE.Group();
+      const stemY = redLayers[redLayers.length - 1].y + 1; // y = 6
+      const stem = new THREE.Mesh(cubeGeo, greenMaterial);
+      stem.position.set(0, stemY, 0);
+      strawberryTop.add(stem);
+
+      // Add several leaves around the stem.
+      for (let i = 0; i < 6; i++) {
+        const leaf = new THREE.Mesh(cubeGeo, greenMaterial);
+        const angle = Math.random() * Math.PI * 2;
+        const radiusLeaf = 1 + Math.random();
+        const leafX = Math.cos(angle) * radiusLeaf;
+        const leafZ = Math.sin(angle) * radiusLeaf;
+        const leafY = stemY + 0.5 + Math.random() * 0.5;
+        leaf.position.set(leafX, leafY, leafZ);
+        strawberryTop.add(leaf);
+      }
+
+      // ----- Combine Body and Crown -----
+      const strawberry = new THREE.Group();
+      strawberry.add(strawberryBody);
+      strawberry.add(strawberryTop);
+
+      // Scale up the entire strawberry massively; seed cubes were already scaled down.
+      const overallScale = 8;
+      strawberry.scale.set(overallScale, overallScale, overallScale);
+      scene.add(strawberry);
+
+      // ----- Lighting -----
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      directionalLight.position.set(5, 10, 7.5);
+      scene.add(directionalLight);
+
+      // ----- Ground Plane -----
+      const planeGeo = new THREE.PlaneGeometry(30, 30);
+      const planeMat = new THREE.MeshStandardMaterial({
+        color: 0x444444,
+        roughness: 0.9,
+        metalness: 0.0
+      });
+      const plane = new THREE.Mesh(planeGeo, planeMat);
+      plane.rotation.x = -Math.PI / 2;
+      plane.position.y = -0.5;
+      scene.add(plane);
+
+      // ----- Animation Loop -----
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        composer.render();
+      }
+      animate();
+
+      // ----- Handle Window Resize -----
+      window.addEventListener("resize", () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        composer.setSize(window.innerWidth, window.innerHeight);
+      });
+    </script>
+  </body>
+</html>

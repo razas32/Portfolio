@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link href="./global.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./favicon_io/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r146/three.min.js"></script>
 </head>
 
 <body>
@@ -21,6 +23,7 @@
             <li><a href="#about">about</a></li>
             <li><a href="#experience">experience</a></li>
             <li><a href="#projects">projects</a></li>
+            <li><a href="#contact">contact</a></li>
         </ul>
     </nav>
 
@@ -32,6 +35,7 @@
 
     <div class="container">
         <header>
+            <div id="3d-container"></div>
             <div class="header-content">
                 <div class="text-content">
                     <h1>Ali Raza</h1>
@@ -39,7 +43,7 @@
                         Bachelors of Computer Engineering & Management @ McMaster University
                     </p>
                     <p style="margin-top: 25px;">
-                        I build pixel-perfect, engaging, and accessible digital experiences.
+                        I build pixel-perfect digital experiences.
                         Passionate about creating innovative solutions and pushing technological boundaries.
                     </p>
                 </div>
@@ -52,11 +56,13 @@
 
         <section id="about" class="section">
             <h2>About Me</h2>
-            <p>Hi, I'm Ali Raza, a 22-year-old engineering student based in Toronto, driven by my obsession to improve, and my love for tech. With aspirations as an entrepreneur, I'm constantly thinking of ways to build & innovate. My personality is curious, I love to learn & solve complex problems, aiming to create impactful solutions. I'm especially interested in new AI & machine learning technology. My dream is to further leverage the power of this technology to change the world 🌎, two industries in specific - auto 🚗, and education 📚. Both are personal passions of mine. This site will highlight my progression as a young professional.</p> 
+            <p>Hi, I'm Ali Raza—a Toronto-based engineering student with a relentless desire to improve, and a deep passion for technological innovation. My entrepreneurial spirit drives me to explore new ways to leverage tech to make a meaningful impact. I truly believe I can <strong>change the world</strong>. My personality is curious - I love to learn. I will forever be a student of my craft. This site will highlight my progression as a young professional.</p>
             <br>
-            <p>In my free time, you can find me trading digital currency, playing Rocket Leauge (my favourite videogame), or planning out upgrades to my "lab". In other words, I'm always by my computer... jk. In all seriousness, I enjoy working out, playing soccer, hanging out with my family & friends, driving around the city, travelling the world & so much more. I'm doing my best to create great memories & to live a life I could look back and smile about, as we all are.</p> 
+            <p>To pursue my aspirations, I've been honing a non-traditional set of skills. I have a passion for building technology, and I thoroughly enjoy practicing sales. I think the ability to sell is fundamental to general human interaction, the workplace especially. Through my experiences, I've found great success in commission-based sales roles @ <strong>GoSales</strong>, and <strong>The Rec Source</strong>. I've also spent an immeasurable amount of time expanding my technical prowess through projects, school, and experiences. My time @ <strong>Septodont</strong> and <strong>Vanguard Financial</strong> has taught me how to work with new technologies/languages, and continuously adapt to industry trends. I'm currently working on <strong>Payroll by Vanguard Financial</strong>. The goal is to create the ultimate payroll processing/helper software for accountant/client interfacing. More details can be found in the project section, along with some other pretty awesome work.</p>
             <br>
-            <p>Follow my journey! My socials can be found below, feel free to message me about insights/opportunities or just to chat. Humans are social beings after all. </p>
+            <p>General fun facts about me: I'm a top 0.2% Rocket League player, I'm a web3 enthusiast, I love working out, playing soccer, travelling the world & so much more.</p>  
+            <br>
+            <p>Follow my journey. My socials can be found below, or top right - feel free to message me about insights/opportunities or just to chat. Humans are social beings after all. </p> 
             <div class="social-icons">
                 <a href="https://github.com/razas32" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/razas32/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
@@ -66,6 +72,27 @@
 
         <section id="experience" class="section">
             <h2>Experience</h2>
+
+            <div class="experience-item">
+                <h3>IT Technician</h3>
+                <p class="job-details">
+                    <span class="job-attribute company-name"><i class="fas fa-building"></i>Septodont</span>
+                    <span class="job-attribute job-type"><i class="fas fa-briefcase"></i>Internship</span>
+                    <span class="job-attribute job-date"><i class="far fa-calendar-alt"></i>January 2025 - Present</span>
+                    <span class="job-attribute job-location"><i class="fas fa-map-marker-alt"></i>Cambridge, Ontario, Canada</span>
+                    <span class="job-attribute job-mode"><i class="fas fa-laptop-house"></i>Hybrid</span>
+                </p>
+                <ul>
+                    <li>Act as the primary point of contact for end-user support, working with the server/networking team when escalations arise.</li>
+                    <li>Manage software licenses and oversee onboarding/offboarding processes, ensuring proper access control and compliance across departments.</li>
+                    <li>Co-lead the UniFlow project, managing the company-wide printing system across France, Canada, and the United States, ensuring seamless integration and functionality.</li>
+                    <li>Participated in the rollout of Multi-Factor Authentication (MFA), Zero Trust Network Access (ZTNA), and other advanced cybersecurity initiatives, enhancing overall security posture.</li>
+                    <li>Develop and maintain Power BI dashboards to track key IT performance metrics, optimize resource allocation, and support data-driven decision-making.</li>
+                    <li>Collaborate with vendor portals (Microsoft, Azure, Autodesk, etc.) to maintain and optimize software and licensing solutions.</li>
+                    <li>Continuously learn and implement new technologies to improve operational efficiency and IT workflows.</li>  
+                </ul>
+            </div>
+            
             <div class="experience-item">
                 <h3>Data Analyst</h3>
                 <p class="job-details">
@@ -123,7 +150,7 @@
                 </ul>
             </div>
             <div class="experience-item">
-                <h3>D2C Sales Consultant</h3>
+                <h3>B2C Sales Consultant</h3>
                 <p class="job-details">
                     <span class="job-attribute company-name"><i class="fas fa-building"></i>Student Works</span>
                     <span class="job-attribute job-type"><i class="fas fa-briefcase"></i>Contract Part-time</span>
@@ -149,7 +176,6 @@
                     <span class="job-attribute job-location"><i class="fas fa-map-marker-alt"></i>Milton, Ontario, Canada</span>
                     <span class="job-attribute job-mode"><i class="fas fa-laptop-house"></i>On-site</span>
                 </p>
-                <p>Puma | Permanent Part-time | Oct 2017 - Jan 2019 | Milton, Ontario, Canada | On-site</p>
                 <ul>
                     <li>Normal retail sales representative stuff, kinda boring</li>
                 </ul>
@@ -168,6 +194,42 @@
         <section id="projects" class="section">
             <h2>Projects</h2>
             
+            <div class="experience-item">
+                <h3>Payroll for Vanguard Financial</h3>
+                <div class="project-meta">
+                    <span class="team-size"><i class="fas fa-users"></i> 1</span>
+                    <span class="project-timeline"><i class="far fa-calendar-alt"></i> October 2024 - Present</span>
+                </div>
+                <p>
+                    <strong>Payroll Processing System</strong> is a full-stack application designed to streamline payroll management for Vanguard Financial. The system facilitates seamless interaction between accountants and clients, offering separate login systems, API routes, and query permissions tailored to each user role.
+                </p>
+                <p><strong>Key highlights include:</strong></p>
+                <ul>
+                    <li>Developed a robust backend using <strong>TypeScript</strong>, with a <strong>PostgreSQL</strong> database for efficient data storage and retrieval.</li>
+                    <li>Implemented secure user authentication and authorization using <strong>JWT (JSON Web Tokens)</strong>, ensuring correct access control for both clients and accountants.</li>
+                    <li>Designed a client interface for uploading payroll information and onboarding employees with accountant-specific information.</li>
+                    <li>Built standardized API routes for accountants, enabling streamlined payroll processing functionalities (currently in development).</li>
+                    <li>Frontend development is underway using <strong>React.js</strong>, focusing on an intuitive and user-friendly interface.</li>
+                </ul>
+                <p>
+                    This project demonstrates my expertise in backend development, database design, and secure system architecture, with a focus on creating scalable and efficient solutions for financial operations.
+                </p>
+                <p>
+                    <em>I'm excited to continue developing this system, as it represents a significant step forward in modernizing payroll processing for small to medium-sized businesses.</em>
+                </p>
+                <div class="skill-tags">
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">JWT</span>
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">REST API</span>
+                    <span class="skill-tag">Full-Stack Development</span>
+                </div>
+                <a href="https://github.com/razas32/Payroll-by-Vanguard-Financial.git" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+
             <div class="experience-item">
                 <h3>Franky</h3>
                 <div class="project-meta">
@@ -312,31 +374,208 @@
                 <a href="mailto:ali-raza@live.ca"><i class="fas fa-envelope"></i></a>
             </div>
         </section>
+
+        <!-- Contact Me Section -->
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out :).</p>
+            <form id="contact-form" action="mailto:ali-raza@live.ca" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="body" rows="5" required></textarea>
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" class="resume-button">Send Message</button>
+                </div>
+            </form>
+            <div class="social-icons">
+                <a href="https://github.com/razas32" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/razas32/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:ali-raza@live.ca"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+
     </div>
+
+    <footer>
+
+        <p>&copy; 2024 Ali Raza. All rights reserved.</p>
+        <a href="#top" class="back-to-top">Back to Top</a>
+
+    </footer>
+
+    <div id="3d-container"></div>
+
+    <script>
+        // Set up the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 500, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, 500); // Match the container height
+        document.getElementById('3d-container').appendChild(renderer.domElement);
+
+        // Add lighting
+        const light = new THREE.PointLight(0xffffff, 1, 100);
+        light.position.set(5, 5, 5);
+        scene.add(light);
+
+        // Create a group to hold the strawberry
+        const strawberry = new THREE.Group();
+
+        // Create the red body of the strawberry
+        const bodyGeometry = new THREE.SphereGeometry(2, 32, 32);
+        const bodyMaterial = new THREE.MeshPhongMaterial({ color: 0xff6f61 }); // Red color
+        const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+        strawberry.add(body);
+
+        // Create the seeds (small yellow cubes)
+        const seedMaterial = new THREE.MeshPhongMaterial({ color: 0xffd700 }); // Yellow color
+        const seedGeometry = new THREE.BoxGeometry(0.2, 0.2, 0.2); // Small cube for seeds
+
+        for (let i = 0; i < 50; i++) {
+            const seed = new THREE.Mesh(seedGeometry, seedMaterial);
+
+            // Randomize seed positions on the surface of the strawberry
+            const theta = Math.random() * Math.PI * 2; // Random angle around the strawberry
+            const phi = Math.acos(2 * Math.random() - 1); // Random angle from top to bottom
+            const radius = 2; // Same as the strawberry radius
+
+            seed.position.set(
+                radius * Math.sin(phi) * Math.cos(theta),
+                radius * Math.sin(phi) * Math.sin(theta),
+                radius * Math.cos(phi)
+            );
+
+            strawberry.add(seed);
+        }
+
+        // Create the green leaves
+        const leafMaterial = new THREE.MeshPhongMaterial({ color: 0x228B22 }); // Green color
+        const leafGeometry = new THREE.ConeGeometry(0.5, 1.5, 4); // Cone shape for leaves
+
+        for (let i = 0; i < 6; i++) {
+            const leaf = new THREE.Mesh(leafGeometry, leafMaterial);
+
+            // Position the leaves on top of the strawberry
+            const angle = (i / 6) * Math.PI * 2; // Evenly spaced around the top
+            const radius = 1.5; // Distance from the center
+
+            leaf.position.set(
+                radius * Math.cos(angle),
+                radius * Math.sin(angle),
+                2 // Slightly above the strawberry
+            );
+
+            leaf.rotation.z = angle; // Rotate the leaves to face outward
+            strawberry.add(leaf);
+        }
+
+        // Add the strawberry to the scene
+        scene.add(strawberry);
+
+        // Position the camera
+        camera.position.z = 15;
+
+        // Make the strawberry interactive
+        let mouseX1 = 0;
+        let mouseY1 = 0;
+
+        document.addEventListener('mousemove', (event) => {
+            // Normalize mouse coordinates to [-1, 1]
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotate the strawberry based on mouse movement
+            strawberry.rotation.y = mouseX * Math.PI; // Rotate around Y-axis
+            strawberry.rotation.x = mouseY * Math.PI; // Rotate around X-axis
+
+            // Render the scene
+            renderer.render(scene, camera);
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const width = window.innerWidth;
+            const height = 500; // Match the container height
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
+
+        // Start the animation
+        animate();
+    </script>
 
     <script>
         const cursorGlow = document.getElementById('cursor-glow');
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
-    
+        let lastTime = 0;
+
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
-    
+
         function animateCursor() {
+            const now = Date.now();
+            const deltaTime = now - lastTime;
+            lastTime = now;
+
             const dx = mouseX - cursorX;
             const dy = mouseY - cursorY;
-    
-            cursorX += dx * 0.3;
-            cursorY += dy * 0.3;
-    
-            cursorGlow.style.transform = `translate(${cursorX - 180}px, ${cursorY - 180}px)`;
-    
+
+            cursorX += dx + 0.5; // Smooth follow effect
+            cursorY += dy + 0.5;
+
+            const speed = Math.sqrt(dx * dx + dy * dy) / deltaTime; // Calculate cursor speed
+            const scale = Math.min(1.2, 0.8 + speed * 0.1); // Scale glow based on speed
+
+            cursorGlow.style.transform = `translate(${cursorX - 400}px, ${cursorY - 400}px) scale(${scale})`;
+            cursorGlow.style.opacity = Math.min(0.8, 0.5 + speed * 0.1); // Adjust opacity based on speed
+
             requestAnimationFrame(animateCursor);
         }
-    
+
         animateCursor();
+
+        document.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        let currentSection = '';
+
+        // Find the current section in view
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        // Highlight the corresponding navigation link
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(currentSection)) {
+                link.classList.add('active');
+            }
+        });
+    });
+
     </script>
 
     <script>
@@ -353,4 +592,24 @@
 
         // Start the cycle when the page loads
         window.addEventListener('load', cycleImages);
+        
     </script>
+
+    <script>
+        document.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionBottom = section.getBoundingClientRect().bottom;
+
+                if (sectionTop < window.innerHeight * 0.8 && sectionBottom > 0) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+        // Trigger the scroll event once on page load
+        document.dispatchEvent(new Event('scroll'));
+    </script>
+
+

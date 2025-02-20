@@ -27,7 +27,7 @@ body {
 }
 
 #about p:last-of-type {
-    margin-bottom: 60px;
+    margin-bottom: 160px;
 }
 
 .container {
@@ -56,7 +56,7 @@ header {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 1001;
+    z-index: 100001;
     display: flex;
     gap: 15px;
 }
@@ -82,6 +82,8 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
+
+
 h1 {
     font-size: 5rem;
     margin-bottom: 0rem;
@@ -104,8 +106,8 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--nav-color);
-    z-index: 1000;
+   
+    z-index: 100000;
     padding: 15px 0;
 }
 
@@ -131,6 +133,11 @@ nav ul li a:hover {
     color: var(--highlight-color);
 }
 
+nav ul li a.active {
+    color: var(--highlight-color); /* Highlight color for active link */
+    font-weight: bold; /* Optional: Make the active link bold */
+}
+
 .profile-picture {
     border: 5px solid #dfdfdf;
     width: 375px;
@@ -138,6 +145,13 @@ nav ul li a:hover {
     margin-left: 120px;
     overflow: hidden;
     position: relative;
+}
+
+#about,
+#experience,
+#projects, #contact {
+    position: relative;
+    z-index: 10000;
 }
 
 .profile-img {
@@ -186,9 +200,19 @@ nav ul li a:hover {
 }
 
 .section {
+    opacity: 0;
     padding: 100px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
 }
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 .project-item {
     margin-bottom: 30px;
@@ -244,21 +268,43 @@ nav ul li a:hover {
     margin-right: 5px;
 }
 
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--nav-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back-to-top {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--highlight-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+    color: var(--text-color);
+}
+
+
 #cursor-glow {
     position: fixed;
-    width: 350px;
-    height: 350px;
+    width: 800px; /* Increased size for a bigger glow */
+    height: 800px;
     border-radius: 50%;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 8000;
     background: radial-gradient(
         circle,
-        var(--cursor-glow-color) 0%,
-        rgba(0, 0, 0, 0.009) 30%,
-        rgba(1, 1, 17, 0.005) 40%
+        rgba(5, 159, 255, 0.65) 0%, /* Brighter light blue for a stronger glow */
+        rgba(53, 178, 255, 0.2) 40%, /* Mid-tone transition */
+        rgba(2, 19, 43, 0) 70% /* Transparent to blend with dark blue background */
     );
-    mix-blend-mode: screen;
-    transition: transform 0.15s ease-out;
+    mix-blend-mode: soft-light; /* Soft blend for a natural effect */
+    transition: transform 0.15s ease-out, opacity 0.3s ease;
+    opacity: 0.9; /* Slightly higher opacity for a more visible glow */
+    transform: translate(-50%, -50%) scale(1); /* Scale to full size */
 }
 
 .social-icons {
@@ -356,6 +402,7 @@ nav ul li a:hover {
 .experience-item ul li {
     margin-bottom: 0.5rem;
     position: relative;
+    z-index: 10000;
     padding-left: 20px;
 }
 
@@ -375,12 +422,17 @@ nav ul li a:hover {
     border: 2px solid var(--highlight-color);
     border-radius: 5px;
     font-size: 1rem;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
 }
 
+
 .resume-button:hover {
-    background-color: rgba(100, 255, 218, 0.1);
+    background-color: var(--highlight-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .resume-container {
@@ -389,6 +441,102 @@ nav ul li a:hover {
     align-items: center;
     margin-top: 50px;  /* Adjust this value as needed */
 }
+
+
+/* Contact Me Section */
+#contact {
+    padding: 100px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#contact h2 {
+    color: var(--heading-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    animation: glow 4s infinite;
+}
+
+#contact p {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--highlight-color);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 200px;
+}
+
+.social-icons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--highlight-color);
+}
+
+#3d-container {
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+    position: relative;
+    margin: 50px 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 @keyframes glow {
     0% {
@@ -430,13 +578,6 @@ nav ul li a:hover {
         max-width: 50%;
     }
 
-    nav {
-        padding: 10px 0;
-    }
-
-    nav ul li {
-        margin: 0 10px;
-    }
 
     h1 {
         font-size: 3.5rem;
