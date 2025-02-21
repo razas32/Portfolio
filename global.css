@@ -290,22 +290,32 @@ footer {
 
 #cursor-glow {
     position: fixed;
-    width: 800px; /* Increased size for a bigger glow */
-    height: 800px;
+    top: 0;
+    left: 0;
+    width: 1200px;
+    height: 1200px;
     border-radius: 50%;
     pointer-events: none;
-    z-index: 8000;
+    z-index: 9999;
+  
+    /* Subtle blue glow that fades out toward the edges */
     background: radial-gradient(
-        circle,
-        rgba(5, 159, 255, 0.65) 0%, /* Brighter light blue for a stronger glow */
-        rgba(53, 178, 255, 0.2) 40%, /* Mid-tone transition */
-        rgba(2, 19, 43, 0) 70% /* Transparent to blend with dark blue background */
+      circle at center,
+      rgba(0, 55, 255, 0.12) 0%,  /* a gentle blue with ~15% alpha */
+      rgba(53, 178, 255, 0) 70%     /* fully transparent by ~70% */
     );
-    mix-blend-mode: soft-light; /* Soft blend for a natural effect */
+  
+    /* 'screen' blend mode to layer softly atop the dark background */
+    mix-blend-mode: screen;
+    
+    /* Smooth transitions for movement/opacity */
     transition: transform 0.15s ease-out, opacity 0.3s ease;
-    opacity: 0.9; /* Slightly higher opacity for a more visible glow */
-    transform: translate(-50%, -50%) scale(1); /* Scale to full size */
-}
+    transform: translate(-50%, -50%);
+    opacity: 0.6; /* Base opacity – can raise or lower if you want more/less glow */
+  }
+  
+  
+  
 
 .social-icons {
     margin-top: 25px;
@@ -452,7 +462,7 @@ footer {
 #contact h2 {
     color: var(--heading-color);
     font-size: 2.5rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
     animation: glow 4s infinite;
 }
 
