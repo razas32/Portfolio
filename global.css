@@ -1,6 +1,6 @@
 :root {
     --bg-color: #02132b;
-    --nav-color: #02132be0;
+    --nav-color: #02132bf0;
     --text-color: #8892b0;
     --heading-color: #ccd6f6;
     --highlight-color: #e3e7f7;
@@ -26,6 +26,7 @@ body {
     overflow-x: hidden;
 }
 
+  
 #about p:last-of-type {
     margin-bottom: 160px;
 }
@@ -56,7 +57,7 @@ header {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 100001;
+    z-index: 20;
     display: flex;
     gap: 15px;
 }
@@ -106,10 +107,22 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-   
-    z-index: 100000;
+    z-index: 20;
     padding: 15px 0;
+    background: none;
+    
 }
+
+.nav-background-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* match nav height */
+    background-color: var(--nav-color); /* semi-transparent */
+    z-index: 10; /* bottom of nav stack */
+    backdrop-filter: blur(100px); /* optional for frosted look */
+  }
 
 nav ul {
     list-style-type: none;
@@ -151,7 +164,6 @@ nav ul li a.active {
 #experience,
 #projects, #contact {
     position: relative;
-    z-index: 10000;
 }
 
 .profile-img {
@@ -289,14 +301,15 @@ footer {
 
 
 #cursor-glow {
+    pointer-events: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 1200px;
     height: 1200px;
     border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
+    z-index: 15;
+
   
     /* Subtle blue glow that fades out toward the edges */
     background: radial-gradient(
@@ -313,9 +326,6 @@ footer {
     transform: translate(-50%, -50%);
     opacity: 0.6; /* Base opacity – can raise or lower if you want more/less glow */
   }
-  
-  
-  
 
 .social-icons {
     margin-top: 25px;
@@ -412,7 +422,6 @@ footer {
 .experience-item ul li {
     margin-bottom: 0.5rem;
     position: relative;
-    z-index: 10000;
     padding-left: 20px;
 }
 
