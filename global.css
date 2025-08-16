@@ -45,7 +45,6 @@ header {
     display: flex;
     align-items: center;
     padding-top: 60px;
-    margin-top: 10px;
 }
 
 .header-content {
@@ -1323,6 +1322,7 @@ a:hover {
 
 @media (max-width: 480px) {
     header {
+        margin-top: 25px;
         padding-top: 80px; /* Optimized mobile nav spacing */
         padding-bottom: 25px; /* Reduced bottom padding */
     }
