@@ -4,7 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali Raza</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ali Raza - Toronto-based software engineer and engineering student at McMaster University. Specializing in full-stack development, embedded systems, and innovative solutions.">
+    <meta name="keywords" content="Ali Raza, Software Engineer, Full Stack Developer, McMaster University, Toronto, Portfolio">
+    <meta name="author" content="Ali Raza">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://razas32.github.io/Portfolio/">
+    <meta property="og:title" content="Ali Raza - Software Engineer Portfolio">
+    <meta property="og:description" content="Toronto-based software engineer and engineering student at McMaster University. Specializing in full-stack development, embedded systems, and innovative solutions.">
+    <meta property="og:image" content="./images/pfp1.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://razas32.github.io/Portfolio/">
+    <meta property="twitter:title" content="Ali Raza - Software Engineer Portfolio">
+    <meta property="twitter:description" content="Toronto-based software engineer and engineering student at McMaster University. Specializing in full-stack development, embedded systems, and innovative solutions.">
+    <meta property="twitter:image" content="./images/pfp1.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link href="./global.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -12,85 +33,98 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r146/three.min.js"></script>
 </head>
 
 <body>
-    <div id="cursor-glow"></div>
-    <div class="nav-background-box"></div>
+    <div id="cursor-glow" aria-hidden="true"></div>
+    <div class="nav-background-box" aria-hidden="true"></div>
 
-    <nav>
+    <nav role="navigation" aria-label="Main navigation">
         <ul>
-            <li><a href="#about">about</a></li>
-            <li><a href="#experience">experience</a></li>
-            <li><a href="#projects">projects</a></li>
-            <li><a href="#contact">contact</a></li>
+            <li><a href="#about" aria-label="About section">about</a></li>
+            <li><a href="#experience" aria-label="Experience section">experience</a></li>
+            <li><a href="#projects" aria-label="Projects section">projects</a></li>
+            <li><a href="#contact" aria-label="Contact section">contact</a></li>
         </ul>
     </nav>
 
-    <div class="header-socials">
-        <a href="https://github.com/razas32" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/razas32/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:ali-raza@live.ca"><i class="fas fa-envelope"></i></a>
+    <div class="header-socials" role="navigation" aria-label="Social media links">
+        <!-- Moved to floating panel -->
     </div>
 
     <div class="container">
-        <header>
-            <div id="3d-container"></div>
+        <header role="banner">
             <div class="header-content">
                 <div class="text-content">
-                    <h1>Ali Raza</h1>
-                    <p style="font-weight: 600;">
-                        Bachelors of Computer Engineering & Management @ McMaster University
-                    </p>
+                    <h1><span class="name-shine">Ali Raza</span></h1>
+                    <div class="degree-row" style="font-weight: 600;">
+                        <span>Bachelors of Computer Engineering & Management @ <span class="mcmaster-word">McMaster</span> University</span>
+                    </div>
                     <p style="margin-top: 25px;">
                         I build pixel-perfect digital experiences.
                         Passionate about creating innovative solutions and pushing technological boundaries.
                     </p>
                 </div>
-                <div class="profile-picture">
-                    <img src="./images/pfp1.jpg" alt="Ali Raza" class="profile-img active">
-                    <img src="./images/pfp2.jpg" alt="Ali Raza" class="profile-img">
+                <div class="profile-picture" role="img" aria-label="Profile photos of Ali Raza">
+                    <img src="./images/pfp1.jpg" alt="Ali Raza smiling" class="profile-img active">
+                    <img src="./images/pfp2.optimized.jpg" alt="Ali Raza in a professional setting" class="profile-img">
                 </div>
             </div>
         </header>
 
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>Hi, I'm Ali Raza — a Toronto-based engineering student with a relentless desire to improve, and a deep passion for technological innovation. My entrepreneurial spirit drives me to explore new ways to leverage technolgy to make a meaningful impact. I truly believe I can <strong>change the world</strong>. My personality is curious, and my strength is my ability to learn. I will forever be a student of my craft. This site will highlight my progression as a young professional.</p>
+        <section id="about" class="section" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
+            <p>I'm <span class="name-shine">Ali Raza</span> — a Toronto-based entrepreneur, founder, and engineering student with an insatiable curiosity and a passion for turning ideas into impact. I lead <span class="aerachron-shine">Aerachron</span>, an AI solutions consultancy helping businesses operate smarter, serve better, and scale faster. My journey blends the grit of high-performance sales with the creativity of building technology, giving me a rare ability to bridge innovation and execution.</p>
+
             <br>
-            <p>To pursue my aspirations, I've been honing a non-traditional set of skills. I have a passion for building technology, and I thoroughly enjoy practicing sales. I think the ability to sell is fundamental to general human interaction, the workplace especially. Through my experiences, I've found great success in commission-based sales roles @ <strong>Freedom Solar Pros</strong>, <strong>GoSales</strong>, and <strong>The Rec Source</strong>. I've also spent an immeasurable amount of time expanding my technical prowess through projects, school, and experiences. My time @ <strong>Septodont</strong> and <strong>Vanguard Financial</strong> has taught me how to work with new technologies/languages, and continuously adapt to industry trends. My latest project is <strong>Payroll by Vanguard Financial</strong>. The goal is to create the ultimate payroll processing/helper software for accountant/client interfacing. More details can be found in the project section, along with some other pretty awesome work.</p>
+            
+            <p>I built my business instincts in competitive, commission-based sales environments with Freedom Solar Pros, GoSales, and The Rec Source, consistently ranking among top performers. On the technical side, I've delivered solutions in both corporate and startup settings — from Septodont and Vanguard Financial to creating Payroll by Vanguard Financial, a modern payroll and client platform.</p>
+            
             <br>
-            <p>General fun facts about me: I'm a top 0.2% Rocket League player, I'm a web3 enthusiast, I love working out, playing soccer, travelling the world & so much more.</p>  
+            
+            <p>I'm currently also working on <span class="famzy-shine">Famzy</span> — a project I believe will transform the way families live and connect. While I'm keeping the details private for now, I promise it's something you'll want to watch closely.</p>  
+            
             <br>
-            <p>Follow my journey! My socials can be found below, or top right - feel free to message me about insights/opportunities or to chat.</p> 
-            <div class="social-icons">
-                <a href="https://github.com/razas32" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/razas32/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:ali-raza@live.ca"><i class="fas fa-envelope"></i></a>
-            </div>
+            
+            <p>Fun facts: I’m a top 0.2% Rocket League player, a web3 enthusiast, and I love working out, playing soccer, traveling the world, and learning new things. I will always be a student of my craft.</p>
+            
         </section>
 
-        <section id="experience" class="section">
-            <h2>Experience</h2>
+        <section id="experience" class="section" aria-labelledby="experience-heading">
+            <h2 id="experience-heading">Experience</h2>
+
+            <div class="experience-item">
+                <h3>Chief Technology Officer & Co‑Founder</h3>
+                <p class="job-details">
+                    <span class="job-attribute company-name"><i class="fas fa-building"></i>Aerachron.ai</span>
+                    <span class="job-attribute job-type"><i class="fas fa-briefcase"></i>Self-employed</span>
+                    <span class="job-attribute job-date"><i class="far fa-calendar-alt"></i>Aug 2025 - Present</span>
+                    <span class="job-attribute job-location"><i class="fas fa-map-marker-alt"></i>GTA, Ontario, Canada</span>
+                    <span class="job-attribute job-mode"><i class="fas fa-laptop-house"></i>Remote</span>
+                </p>
+                <p></p>
+                <a class="project-link" href="https://www.aerachron.ai" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> www.aerachron.ai</a>
+            </div>
 
             <div class="experience-item">
                 <h3>B2C Solar Sales Consultant</h3>
                 <p class="job-details">
                     <span class="job-attribute company-name"><i class="fas fa-building"></i>Freedom Solar Pros</span>
                     <span class="job-attribute job-type"><i class="fas fa-briefcase"></i>Contract Full-time</span>
-                    <span class="job-attribute job-date"><i class="far fa-calendar-alt"></i>May 2025 - Present</span>
+                    <span class="job-attribute job-date"><i class="far fa-calendar-alt"></i>May 2025 - Aug 2025</span>
                     <span class="job-attribute job-location"><i class="fas fa-map-marker-alt"></i>Houston, Texas, U.S.A</span>
                     <span class="job-attribute job-mode"><i class="fas fa-laptop-house"></i>On-site</span>
                 </p>
                 <ul>
-          
-                    <li>Loading... will be updated at the end of contract.</li>
-
-
+                    <li>Closed 13 residential solar agreements over 45 days by running a high-activity door-to-door cadence across Houston neighborhoods.</li>
+                    <li>Drove the full sales cycle: prospecting, discovery, utility bill analysis, proposal presentation, objection handling, and contract execution.</li>
+                    <li>Consistently knocked 100–150 doors per day, generating a strong pipeline of qualified appointments and follow-ups.</li>
+                    <li>Collaborated with site survey and operations teams to ensure smooth handoff from sale to install scheduling and permitting.</li>
+                    <li>Utilized data-driven territory planning to optimize route efficiency and daily set rates.</li>
+                    <li>Departed in August to return to school; originally planned for a 4‑month summer term.</li>
                 </ul>
             </div>
-
+            
             <div class="experience-item">
                 <h3>IT Technician</h3>
                 <p class="job-details">
@@ -121,7 +155,7 @@
                     <span class="job-attribute job-mode"><i class="fas fa-laptop-house"></i>Hybrid</span>
                 </p>
                 <ul>
-                    <li>Assisted in managing financial records for 30+ business clients, leveraging data science techniques to ensure efficency & accuracy</li>
+                    <li>Assisted in managing financial records for 30+ business clients, leveraging data science techniques to ensure efficiency & accuracy</li>
                     <li>Conducted basic data analysis on accounts and presented findings</li>
                     <li>Created a Python script to automate the reconciliation of bank statements, processing an average of 1,000 transactions per week with > 99% accuracy</li>
                     <li>Contributed to implementing a new SQL database system for improved data organization & data migration</li>
@@ -198,61 +232,18 @@
                     <li>Normal retail sales representative stuff, kinda boring</li>
                 </ul>
             </div>
-            <div class="resume-container">
-                <a href="resume.pdf" class="resume-button" target="_blank">See Full Resume</a>
-            </div>
-            <div class="social-icons">
-                <a href="https://github.com/razas32" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/razas32/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:ali-raza@live.ca"><i class="fas fa-envelope"></i></a>
-            </div>
-
         </section>
 
-        <section id="projects" class="section">
-            <h2>Projects</h2>
+        <section id="projects" class="section" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
             
-            <div class="experience-item">
-                <h3>Payroll by Vanguard Financial</h3>
-                <div class="project-meta">
-                    <span class="team-size"><i class="fas fa-users"></i> 1</span>
-                    <span class="project-timeline"><i class="far fa-calendar-alt"></i> October 2024 - Present</span>
-                </div>
-                <p>
-                    <strong>Payroll by Vanguard Financial</strong> is a full-stack application designed to streamline payroll management for Vanguard Financial. The system facilitates seamless interaction between accountants and clients, offering separate login systems, API routes, and query permissions tailored to each user role.
-                </p>
-                <p><strong>Key highlights include:</strong></p>
-                <ul>
-                    <li>Developed a robust backend using <strong>TypeScript</strong>, with a <strong>PostgreSQL</strong> database for efficient data storage and retrieval.</li>
-                    <li>Implemented secure user authentication and authorization using <strong>JWT (JSON Web Tokens)</strong>, ensuring correct access control for both clients and accountants.</li>
-                    <li>Designed a client interface for uploading payroll information and onboarding employees with accountant-specific information.</li>
-                    <li>Built standardized API routes for accountants, enabling streamlined payroll processing functionalities (currently in development).</li>
-                    <li>Frontend development is underway using <strong>React.js</strong>, focusing on an intuitive and user-friendly interface.</li>
-                </ul>
-                <p>
-                    This project demonstrates my expertise in backend development, database design, and secure system architecture, with a focus on creating scalable and efficient solutions for financial operations.
-                </p>
-                <p>
-                    <em>I'm excited to continue developing this system, as it represents a significant step forward in modernizing payroll processing for small to medium-sized businesses.</em>
-                </p>
-                <div class="skill-tags">
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">JWT</span>
-                    <span class="skill-tag">React.js</span>
-                    <span class="skill-tag">REST API</span>
-                    <span class="skill-tag">Full-Stack Development</span>
-                </div>
-                <a href="https://github.com/razas32/Payroll-by-Vanguard-Financial.git" class="project-link" target="_blank">
-                    <i class="fab fa-github"></i> View on GitHub
-                </a>
-            </div>
+            <!-- Payroll project moved to the 2023 section below -->
 
             <div class="experience-item">
                 <h3>Franky</h3>
                 <div class="project-meta">
                     <span class="team-size"><i class="fas fa-users"></i> 1</span>
-                    <span class="project-timeline"><i class="far fa-calendar-alt"></i> Feburary 2024 - June 2024</span>
+                    <span class="project-timeline"><i class="far fa-calendar-alt"></i> February 2024 - June 2024</span>
                 </div>
                 <p><strong>Franky</strong> is an AI-powered bot for Rocket League, developed using Python and RLGym. Leveraging deep reinforcement learning, Franky adapts to high-level gameplay with real-time decision-making and dynamic in-game responses.</p>
                 <p><strong>Key highlights include:</strong></p>
@@ -283,7 +274,7 @@
                 <h3>Real-time SDR for mono/stereo FM</h3>
                 <div class="project-meta">
                     <span class="team-size"><i class="fas fa-users"></i> 4</span>
-                    <span class="project-timeline"><i class="far fa-calendar-alt"></i> Feburary 2024 - March 2024</span>
+                    <span class="project-timeline"><i class="far fa-calendar-alt"></i> February 2024 - March 2024</span>
                 </div>
                 <p>Developed a software-defined radio (SDR) system for FM and RDS decoding within a Unix environment, leveraging pipelines for efficient data flow between processing stages. We implemented advanced DSP algorithms in C++ for real-time mono and stereo FM demodulation, incorporating multithreading to optimize and meet real-time constraints. Utilized Python for system validation and performance analysis, showcasing proficiency in cross-language development within the Linux ecosystem.</p>
                 <div class="skill-tags">
@@ -320,11 +311,41 @@
                 </a>
             </div>
 
+            <div class="experience-item">
+                <h3>Payroll by Vanguard Financial</h3>
+                <div class="project-meta">
+                    <span class="team-size"><i class="fas fa-users"></i> 1</span>
+                    <span class="project-timeline"><i class="far fa-calendar-alt"></i> May 2023 - Aug 2023</span>
+                </div>
+                <p>
+                    <strong>Payroll by Vanguard Financial</strong> is a full-stack application designed to streamline payroll management for Vanguard Financial. The system facilitates seamless interaction between accountants and clients, offering separate login systems, API routes, and query permissions tailored to each user role.
+                </p>
+                <p><strong>Key highlights include:</strong></p>
+                <ul>
+                    <li>Developed a robust backend using <strong>TypeScript</strong>, with a <strong>PostgreSQL</strong> database for efficient data storage and retrieval.</li>
+                    <li>Implemented secure user authentication and authorization using <strong>JWT (JSON Web Tokens)</strong>, ensuring correct access control for both clients and accountants.</li>
+                    <li>Designed a client interface for uploading payroll information and onboarding employees with accountant-specific information.</li>
+                    <li>Built standardized API routes for accountants, enabling streamlined payroll processing functionalities.</li>
+                    <li>Frontend development with <strong>React.js</strong> focusing on an intuitive and user-friendly interface.</li>
+                </ul>
+                <div class="skill-tags">
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">JWT</span>
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">REST API</span>
+                    <span class="skill-tag">Full-Stack Development</span>
+                </div>
+                <span class="project-link">
+                    <i class="fas fa-lock"></i> Private Repository
+                </span>
+            </div>
+
             <div class="project-item">
                 <h3>LiDAR Spatial Mapper</h3>
                 <div class="project-meta">
                     <span class="team-size"><i class="fas fa-users"></i> 1</span>
-                    <span class="project-timeline"><i class="far fa-calendar-alt"></i> Feburary 2023 - April 2023</span>
+                    <span class="project-timeline"><i class="far fa-calendar-alt"></i> February 2023 - April 2023</span>
                 </div>
                 <p>In this project, I engineered a real-time 3D spatial mapping system, integrating a VL531X time-of-flight sensor, 28BYJ-48 stepper motor, and MSP432E401Y microcontroller. I2C and UART protocols were used for data transmission from sensor, to microcontroller, to PC. Python and the Open3D API are then used to transform the raw distance data into a dynamic 3D point cloud visualization, with the ability map any enclosed space. This project demonstrates my abilities in embedded systems design, sensor integration, communication protocols, and real-time 3D data processing.</p>
                 <div class="skill-tags">
@@ -383,164 +404,145 @@
                 </a>
             </div>
 
-            <div class="resume-container">
-                <a href="resume.pdf" class="resume-button" target="_blank">See Full Resume</a>
-            </div>
-            <div class="social-icons">
-                <a href="https://github.com/razas32" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/razas32/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:ali-raza@live.ca"><i class="fas fa-envelope"></i></a>
-            </div>
         </section>
 
-        <section id="contact" class="section">
-            <h2>Contact Me</h2>
-            <form
-              id="contact-form"
-              action="https://formspree.io/f/mgvodgba" 
-              method="POST"
-            >
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <!-- Formspree looks for "_replyto" as the email to reply to -->
-                <input type="email" id="email" name="_replyto" required>
-              </div>
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject">
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="8" required></textarea>
-              </div>
-              <div style="text-align: center;">
-                <button type="submit" class="resume-button">Send Message</button>
-              </div>
-            </form>
-          </section>
+        <section id="contact" class="section" aria-labelledby="contact-heading">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h2 id="contact-heading">Let's Connect</h2>
+                    <p class="contact-subtitle">Have a project in mind or just want to chat? I'd love to hear from you.</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h3>Email</h3>
+                                <p>ali-raza@live.ca</p>
+                                <a href="mailto:ali-raza@live.ca" class="contact-link">Send Email</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h3>LinkedIn</h3>
+                                <p>Let's connect professionally</p>
+                                <a href="https://www.linkedin.com/in/razas32/" target="_blank" rel="noopener noreferrer" class="contact-link">Connect</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-card-content">
+                                <h3>Location</h3>
+                                <p>Toronto, Ontario</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" action="https://formspree.io/f/mgvodgba" method="POST" role="form" aria-label="Contact form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name *</label>
+                                    <input type="text" id="name" name="name" required aria-required="true" placeholder="Your full name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="_replyto" required aria-required="true" placeholder="your.email@example.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Tell me about your project or just say hello..."></textarea>
+                            </div>
+                            <button type="submit" class="contact-submit-btn" aria-label="Send message">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
           
 
     </div>
 
-    <footer>
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Mobile-only footer actions -->
+    <div class="mobile-footer-actions">
+        <h3>Links</h3>
+        <div class="mobile-actions-grid">
+            <a href="https://github.com/razas32" target="_blank" rel="noopener noreferrer" class="mobile-action-item" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/razas32/" target="_blank" rel="noopener noreferrer" class="mobile-action-item" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+            <a href="#contact" class="mobile-action-item" aria-label="Contact Form">
+                <i class="fas fa-comment"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+        <div class="mobile-resume-section">
+            <a href="resume.pdf" target="_blank" class="mobile-resume-btn" aria-label="Download resume">
+                <i class="fas fa-file-pdf"></i>
+                Download Resume
+            </a>
+            <p class="resume-note">Note: Resume is currently outdated.</p>
+        </div>
+    </div>
+
+    <!-- New floating action panel -->
+    <div class="floating-panel" role="navigation" aria-label="Quick actions">
+        <div class="panel-toggle" aria-label="Toggle quick actions">
+            <i class="fas fa-plus"></i>
+        </div>
+        <div class="panel-content">
+            <div class="panel-resume-section">
+                <a href="resume.pdf" target="_blank" class="panel-item resume-item" aria-label="Download resume">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Resume</span>
+                </a>
+                <p class="panel-resume-note">Being updated</p>
+            </div>
+            <a href="https://github.com/razas32" target="_blank" rel="noopener noreferrer" class="panel-item" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/razas32/" target="_blank" rel="noopener noreferrer" class="panel-item" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </div>
+
+    <footer role="contentinfo">
 
         <p>&copy; 2024 Ali Raza. All rights reserved.</p>
-        <a href="#top" class="back-to-top">Back to Top</a>
+        <a href="#top" class="back-to-top" aria-label="Back to top of page">Back to Top</a>
 
     </footer>
 
-    <div id="3d-container"></div>
-
     <script>
-        // Set up the scene, camera, and renderer
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 500, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(window.innerWidth, 500); // Match the container height
-        document.getElementById('3d-container').appendChild(renderer.domElement);
-
-        // Add lighting
-        const light = new THREE.PointLight(0xffffff, 1, 100);
-        light.position.set(5, 5, 5);
-        scene.add(light);
-
-        // Create a group to hold the strawberry
-        const strawberry = new THREE.Group();
-
-        // Create the red body of the strawberry
-        const bodyGeometry = new THREE.SphereGeometry(2, 32, 32);
-        const bodyMaterial = new THREE.MeshPhongMaterial({ color: 0xff6f61 }); // Red color
-        const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
-        strawberry.add(body);
-
-        // Create the seeds (small yellow cubes)
-        const seedMaterial = new THREE.MeshPhongMaterial({ color: 0xffd700 }); // Yellow color
-        const seedGeometry = new THREE.BoxGeometry(0.2, 0.2, 0.2); // Small cube for seeds
-
-        for (let i = 0; i < 50; i++) {
-            const seed = new THREE.Mesh(seedGeometry, seedMaterial);
-
-            // Randomize seed positions on the surface of the strawberry
-            const theta = Math.random() * Math.PI * 2; // Random angle around the strawberry
-            const phi = Math.acos(2 * Math.random() - 1); // Random angle from top to bottom
-            const radius = 2; // Same as the strawberry radius
-
-            seed.position.set(
-                radius * Math.sin(phi) * Math.cos(theta),
-                radius * Math.sin(phi) * Math.sin(theta),
-                radius * Math.cos(phi)
-            );
-
-            strawberry.add(seed);
-        }
-
-        // Create the green leaves
-        const leafMaterial = new THREE.MeshPhongMaterial({ color: 0x228B22 }); // Green color
-        const leafGeometry = new THREE.ConeGeometry(0.5, 1.5, 4); // Cone shape for leaves
-
-        for (let i = 0; i < 6; i++) {
-            const leaf = new THREE.Mesh(leafGeometry, leafMaterial);
-
-            // Position the leaves on top of the strawberry
-            const angle = (i / 6) * Math.PI * 2; // Evenly spaced around the top
-            const radius = 1.5; // Distance from the center
-
-            leaf.position.set(
-                radius * Math.cos(angle),
-                radius * Math.sin(angle),
-                2 // Slightly above the strawberry
-            );
-
-            leaf.rotation.z = angle; // Rotate the leaves to face outward
-            strawberry.add(leaf);
-        }
-
-        // Add the strawberry to the scene
-        scene.add(strawberry);
-
-        // Position the camera
-        camera.position.z = 15;
-
-        // Make the strawberry interactive
-        let mouseX1 = 0;
-        let mouseY1 = 0;
-
-        document.addEventListener('mousemove', (event) => {
-            // Normalize mouse coordinates to [-1, 1]
-            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-        });
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-
-            // Rotate the strawberry based on mouse movement
-            strawberry.rotation.y = mouseX * Math.PI; // Rotate around Y-axis
-            strawberry.rotation.x = mouseY * Math.PI; // Rotate around X-axis
-
-            // Render the scene
-            renderer.render(scene, camera);
-        }
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            const width = window.innerWidth;
-            const height = 500; // Match the container height
-            renderer.setSize(width, height);
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-        });
-
-        // Start the animation
-        animate();
-    </script>
-
-    <script>
+        // Enhanced cursor glow with better performance
         const cursorGlow = document.getElementById('cursor-glow');
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
@@ -559,78 +561,177 @@
             const dx = mouseX - cursorX;
             const dy = mouseY - cursorY;
 
-            cursorX += dx + 0.5; // Smooth follow effect
-            cursorY += dy + 0.5;
+            cursorX += dx * 0.1;
+            cursorY += dy * 0.1;
 
-            const speed = Math.sqrt(dx * dx + dy * dy) / deltaTime; // Calculate cursor speed
-            const scale = Math.min(1.2, 0.8 + speed * 0.1); // Scale glow based on speed
+            const speed = Math.sqrt(dx * dx + dy * dy) / deltaTime;
+            const scale = Math.min(1.2, 0.8 + speed * 0.05);
 
             cursorGlow.style.transform = `translate(${cursorX - 600}px, ${cursorY - 600}px) scale(${scale})`;
-            cursorGlow.style.opacity = Math.min(0.8, 0.5 + speed * 0.1); // Adjust opacity based on speed
+            cursorGlow.style.opacity = Math.min(0.8, 0.5 + speed * 0.05);
 
             requestAnimationFrame(animateCursor);
         }
 
         animateCursor();
 
+        // Enhanced scroll handling with progress indicator
+        function updateScrollProgress() {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            
+            if (scrollProgress) {
+                scrollProgress.style.width = scrollPercent + '%';
+            }
+        }
+
+        // Better navigation active states
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            let currentSection = '';
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(currentSection) && currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Optimized scroll event handler
+        let scrollTimeout;
         document.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('nav ul li a');
+            updateScrollProgress();
+            
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+            
+            scrollTimeout = setTimeout(() => {
+                updateActiveNav();
+                
+                // Enhanced section visibility
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const sectionBottom = section.getBoundingClientRect().bottom;
 
-        let currentSection = '';
+                    if (sectionTop < window.innerHeight * 0.8 && sectionBottom > 0) {
+                        section.classList.add('visible');
+                    }
+                });
+            }, 10);
+        });
 
-        // Find the current section in view
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= sectionTop - sectionHeight / 3) {
-                currentSection = section.getAttribute('id');
+        // Initial call
+        updateActiveNav();
+        updateScrollProgress();
+        document.dispatchEvent(new Event('scroll'));
+
+        // Enhanced form validation and feedback
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            const submitBtn = contactForm.querySelector('.contact-submit-btn');
+            const inputs = contactForm.querySelectorAll('input, textarea');
+
+            // Real-time validation feedback
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.hasAttribute('required') && !this.value.trim()) {
+                        this.style.borderColor = 'rgba(244, 67, 54, 0.5)';
+                    } else if (this.validity.valid) {
+                        this.style.borderColor = 'rgba(76, 175, 80, 0.5)';
+                    }
+                });
+
+                input.addEventListener('input', function() {
+                    if (this.style.borderColor) {
+                        this.style.borderColor = '';
+                    }
+                });
+            });
+
+            // Enhanced form submission
+            contactForm.addEventListener('submit', function(e) {
+                submitBtn.classList.add('loading');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                
+                // Reset after 3 seconds (adjust based on your form handler)
+                setTimeout(() => {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                }, 3000);
+            });
+        }
+
+        // Enhanced keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            // Escape key to close floating panel (if open)
+            if (e.key === 'Escape') {
+                const floatingPanel = document.querySelector('.floating-panel');
+                if (floatingPanel) {
+                    floatingPanel.style.pointerEvents = 'none';
+                    setTimeout(() => {
+                        floatingPanel.style.pointerEvents = 'auto';
+                    }, 100);
+                }
             }
         });
 
-        // Highlight the corresponding navigation link
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(currentSection)) {
-                link.classList.add('active');
-            }
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
-    });
 
-    </script>
-
-    <script>
+        // Enhanced image cycling with better performance
         function cycleImages() {
             const images = document.querySelectorAll('.profile-img');
             let currentIndex = 0;
+
+            if (images.length <= 1) return;
 
             setInterval(() => {
                 images[currentIndex].classList.remove('active');
                 currentIndex = (currentIndex + 1) % images.length;
                 images[currentIndex].classList.add('active');
-            }, 5000); // Change image every 3 seconds
+            }, 5000);
         }
 
-        // Start the cycle when the page loads
-        window.addEventListener('load', cycleImages);
-        
-    </script>
-
-    <script>
-        document.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const sectionBottom = section.getBoundingClientRect().bottom;
-
-                if (sectionTop < window.innerHeight * 0.8 && sectionBottom > 0) {
-                    section.classList.add('visible');
-                }
-            });
+        // Initialize when page loads
+        window.addEventListener('load', () => {
+            cycleImages();
+            
+            // Add loaded class for any entrance animations
+            document.body.classList.add('loaded');
         });
 
-        // Trigger the scroll event once on page load
-        document.dispatchEvent(new Event('scroll'));
+        // Performance optimization: Reduce animations on low-end devices
+        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
+            document.documentElement.style.setProperty('--animation-duration', '0.2s');
+        }
     </script>
 
 
