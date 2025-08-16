@@ -17,7 +17,7 @@
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Account for fixed nav */
+    scroll-padding-top: 70px; /* Account for fixed nav */
 }
 
 body {
@@ -45,6 +45,7 @@ header {
     display: flex;
     align-items: center;
     padding-top: 60px;
+    margin-top: 10px;
 }
 
 .header-content {
@@ -119,7 +120,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px; /* match nav height */
+    height: 60px; /* Optimized for desktop */
     background-color: var(--nav-color); /* semi-transparent */
     z-index: 10; /* bottom of nav stack */
     backdrop-filter: blur(100px); /* optional for frosted look */
@@ -742,8 +743,8 @@ footer {
     
     nav ul {
         justify-content: center;
-        padding: 0 8px;
-        gap: 4px;
+        padding: 0 5px;
+        gap: 3px;
         flex-wrap: nowrap;
         width: 100%;
         max-width: 100vw;
@@ -755,12 +756,12 @@ footer {
     }
     
     nav ul li a {
-        font-size: 0.78rem;
-        padding: 8px 10px;
+        font-size: 0.82rem; /* Slightly larger for better readability */
+        padding: 8px 8px;
         border-radius: 6px;
         display: block;
         transition: all 0.3s ease;
-        min-width: 60px; /* Smaller but adequate touch target */
+        min-width: 65px; /* Adequate touch target */
         text-align: center;
         white-space: nowrap;
     }
@@ -772,7 +773,7 @@ footer {
     }
     
     .nav-background-box {
-        height: 50px; /* Reduced to match smaller mobile nav */
+        height: 65px; /* Slightly increased for better mobile coverage */
     }
     
     /* Contact section mobile */
@@ -1209,8 +1210,8 @@ a:hover {
 @media (max-width: 768px) {
     header {
         min-height: 100vh;
-        padding-top: 90px; /* Increased to push content down */
-        padding-bottom: 40px;
+        padding-top: 75px; /* Slightly reduced for better mobile spacing */
+        padding-bottom: 30px; /* Reduced bottom padding */
         display: flex;
         flex-direction: column;
         justify-content: flex-start; /* Start from top instead of center */
@@ -1229,20 +1230,33 @@ a:hover {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 40px; /* Better spacing between elements */
+        gap: 30px; /* Tighter spacing for mobile */
         width: 100%;
+        padding: 0 15px; /* Add container padding */
     }
 
     .text-content {
         max-width: 100%;
         text-align: center;
-        padding: 0 10px; /* Add side padding */
+        padding: 0 5px;
+        margin-bottom: 10px; /* Add space below text */
     }
 
     h1 {
-        font-size: 3.8rem;
-        margin-bottom: 15px;
-        line-height: 1.1;
+        font-size: 3.5rem; /* Slightly smaller */
+        margin-bottom: 12px; /* Tighter margin */
+        line-height: 1.05;
+    }
+
+    .degree-row {
+        margin-bottom: 20px; /* Add space after degree */
+        font-size: 0.95rem; /* Slightly smaller text */
+    }
+
+    .text-content p {
+        font-size: 1rem; /* Ensure readable size */
+        line-height: 1.5;
+        margin-top: 18px; /* Better spacing from degree */
     }
 
     h2 {
@@ -1255,10 +1269,10 @@ a:hover {
     }
 
     .profile-picture {
-        width: 260px;
-        height: 357px;
-        margin: 0; /* Remove any margins */
-        order: 2; /* Ensure picture comes after text */
+        width: 240px; /* Slightly smaller */
+        height: 330px; /* Proportional height */
+        margin: 0;
+        order: 2;
     }
 
     /* Remove old social positioning since they're in mobile footer now */
@@ -1271,25 +1285,78 @@ a:hover {
     }
 }
 
+/* iPhone-specific optimizations */
+@media (max-width: 430px) {
+    /* Mobile nav adjustments for iPhone screens */
+    nav ul {
+        padding: 0 2px;
+        gap: 1px;
+        justify-content: space-evenly; /* Better distribution */
+    }
+    
+    nav ul li {
+        margin: 0;
+        flex: 1; /* Equal width distribution */
+        max-width: 25%; /* Ensure 4 items fit evenly */
+    }
+    
+    nav ul li a {
+        font-size: 0.76rem; /* Readable but compact */
+        padding: 8px 2px;
+        min-width: auto; /* Let flex handle width */
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Very small screens (iPhone SE) */
+@media (max-width: 375px) {
+    nav ul {
+        padding: 0 1px;
+    }
+    
+    nav ul li a {
+        font-size: 0.74rem;
+        padding: 7px 1px;
+    }
+}
+
 @media (max-width: 480px) {
     header {
-        padding-top: 85px; /* Increased to match the mobile adjustments */
-        padding-bottom: 30px;
+        padding-top: 80px; /* Optimized mobile nav spacing */
+        padding-bottom: 25px; /* Reduced bottom padding */
     }
 
     .container {
-        width: 98%;
-        padding: 0 10px; /* Tighter padding on small screens */
+        width: 96%;
+        padding: 0 8px;
+    }
+
+    .header-content {
+        gap: 25px; /* Even tighter spacing for small screens */
+        padding: 0 10px;
     }
 
     .text-content {
-        padding: 0 5px;
+        padding: 0;
+        margin-bottom: 8px;
     }
 
     h1 {
-        font-size: 3.2rem;
-        margin-bottom: 12px;
-        line-height: 1.1;
+        font-size: 3rem; /* Smaller for tiny screens */
+        margin-bottom: 10px;
+        line-height: 1.05;
+    }
+
+    .degree-row {
+        font-size: 0.9rem; /* Smaller degree text */
+        margin-bottom: 16px;
+    }
+
+    .text-content p {
+        font-size: 0.95rem; /* Slightly smaller paragraph */
+        line-height: 1.45;
+        margin-top: 16px;
     }
 
     h2 {
@@ -1302,28 +1369,8 @@ a:hover {
     }
 
     .profile-picture {
-        width: 220px;
-        height: 302px;
-    }
-
-    .header-content {
-        gap: 35px; /* Slightly tighter gap on small screens */
-    }
-
-    /* Mobile nav adjustments for very small screens */
-    nav ul {
-        padding: 0 5px;
-        gap: 2px;
-    }
-    
-    nav ul li a {
-        font-size: 0.72rem;
-        padding: 6px 8px;
-        min-width: 55px;
-    }
-
-    nav ul li {
-        margin: 0 1px;
+        width: 200px; /* Smaller for tiny screens */
+        height: 275px; /* Proportional */
     }
 }
 
