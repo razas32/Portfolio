@@ -1051,10 +1051,17 @@ a:hover {
         transform: scale(0.98);
     }
     
-    /* Better mobile navigation feedback */
+    /* Better mobile navigation feedback - prevent sticky :active state */
     nav ul li a:active {
         background: rgba(136, 146, 176, 0.25);
         transform: scale(0.95);
+    }
+    
+    /* Ensure :active state doesn't stick on mobile */
+    @media (hover: none) and (pointer: coarse) {
+        nav ul li a:active {
+            transition: all 0.1s ease;
+        }
     }
     
     /* Ensure nav is always centered and responsive */

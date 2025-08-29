@@ -74,19 +74,13 @@
 
         <section id="about" class="section" aria-labelledby="about-heading">
             <h2 id="about-heading">About Me</h2>
-            <p>I'm <span class="name-shine">Ali Raza</span> — a Toronto-based entrepreneur, founder, and engineering student with an insatiable curiosity and a passion for turning ideas into impact. I lead <span class="aerachron-shine">Aerachron</span>, an AI solutions consultancy helping businesses operate smarter, serve better, and scale faster. My journey blends the grit of high-performance sales with the creativity of building technology, giving me a rare ability to bridge innovation and execution.</p>
-
+            <p>I'm <span class="name-shine">Ali Raza</span> — a Toronto-based entrepreneur, and engineering student with an insatiable curiosity and a passion for turning ideas into impact. I lead <span class="aerachron-shine">Aerachron</span>, an AI solutions consultancy helping businesses operate smarter, serve better, and scale faster. My journey blends the grit of high-performance sales with the creativity of building technology, giving me a rare ability to bridge innovation and execution.</p>
             <br>
-            
             <p>I built my business instincts in competitive, commission-based sales environments with Freedom Solar Pros, GoSales, and The Rec Source, consistently ranking among top performers. On the technical side, I've delivered solutions in both corporate and startup settings — from Septodont and Vanguard Financial to creating Payroll by Vanguard Financial, a modern payroll and client platform.</p>
-            
             <br>
-            
-            <p>I'm currently also working on <span class="famzy-shine">Famzy</span> — a project I believe will transform the way families live and connect. While I'm keeping the details private for now, I promise it's something you'll want to watch closely.</p>  
-            
+            <p>I'm currently also working on <span class="famzy-shine">Famzy</span> — a project I believe will transform the way families live and connect. While I'm keeping the scope private for now, I promise it's something you'll want to watch closely.</p>  
             <br>
-            
-            <p>Fun facts: I’m a top 0.2% Rocket League player, a web3 enthusiast, and I love working out, playing soccer, traveling the world, and learning new things. I will always be a student of my craft.</p>
+            <p>Fun facts: I’m a top 0.1% Rocket League player, a web3 enthusiast, and I love working out, playing soccer, traveling the world, and learning new things. I will always be a student of my craft.</p>
             
         </section>
 
@@ -94,16 +88,16 @@
             <h2 id="experience-heading">Experience</h2>
 
             <div class="experience-item">
-                <h3>Chief Technology Officer & Co‑Founder</h3>
+                <h3>Chief Technology Officer</h3>
                 <p class="job-details">
                     <span class="job-attribute company-name"><i class="fas fa-building"></i>Aerachron.ai</span>
                     <span class="job-attribute job-type"><i class="fas fa-briefcase"></i>Self-employed</span>
                     <span class="job-attribute job-date"><i class="far fa-calendar-alt"></i>Aug 2025 - Present</span>
                     <span class="job-attribute job-location"><i class="fas fa-map-marker-alt"></i>GTA, Ontario, Canada</span>
-                    <span class="job-attribute job-mode"><i class="fas fa-laptop-house"></i>Remote</span>
+                    <span class="job-attribute job-mode"><i class="fas fa-laptop-house"></i>Hybrid</span>
                 </p>
                 <p></p>
-                <a class="project-link" href="https://www.aerachron.ai" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> www.aerachron.ai</a>
+                <a class="project-link" href="https://www.aerachron.ai" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> <span class="aerachron-shine">www.aerachron.ai</span></a>
             </div>
 
             <div class="experience-item">
@@ -587,7 +581,7 @@
             }
         }
 
-        // Better navigation active states
+        // Better navigation active states with mobile fix
         function updateActiveNav() {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('nav ul li a');
@@ -605,6 +599,11 @@
             });
 
             navLinks.forEach(link => {
+                // Force blur to ensure no sticky focus states on mobile
+                if (document.activeElement === link) {
+                    link.blur();
+                }
+                
                 link.classList.remove('active');
                 if (link.getAttribute('href').includes(currentSection) && currentSection) {
                     link.classList.add('active');
@@ -692,7 +691,7 @@
             }
         });
 
-        // Smooth scroll for navigation links
+        // Smooth scroll for navigation links with mobile touch fix
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -703,6 +702,27 @@
                         block: 'start'
                     });
                 }
+                
+                // Fix for mobile sticky :active state
+                this.blur();
+                setTimeout(() => {
+                    this.classList.remove('active');
+                }, 50);
+            });
+
+            // Additional mobile touch handling
+            anchor.addEventListener('touchstart', function() {
+                // Remove active class from all nav links immediately on touch
+                document.querySelectorAll('nav a').forEach(link => {
+                    if (link !== this) {
+                        link.classList.remove('active');
+                    }
+                });
+            });
+
+            anchor.addEventListener('touchend', function() {
+                // Ensure the :active pseudo-class is cleared
+                this.blur();
             });
         });
 
