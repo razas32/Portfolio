@@ -1407,14 +1407,14 @@ a:hover {
 }
 
 .mcmaster-word {
-    color: #7A003C !important;
+    color: #C41E5A !important;
     font-weight: bold;
-    background: linear-gradient(90deg, #7A003C 0%, #7A003C 40%, #ffffff 50%, #7A003C 60%, #7A003C 100%);
+    background: linear-gradient(90deg, #C41E5A 0%, #C41E5A 40%, #ffffff 50%, #C41E5A 60%, #C41E5A 100%);
     background-size: 200% 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: mcmasterShine 2s linear infinite, mcmasterPulse 4s ease-in-out infinite alternate;
+    animation: mcmasterShine 2s linear infinite;
 }
 
 @keyframes mcmasterShine {
@@ -1423,8 +1423,8 @@ a:hover {
 }
 
 @keyframes mcmasterPulse {
-    0% { filter: drop-shadow(0 0 2px #7A003C); }
-    100% { filter: drop-shadow(0 0 8px #7A003C); }
+    0% { filter: drop-shadow(0 0 2px #C41E5A); }
+    100% { filter: drop-shadow(0 0 8px #C41E5A); }
 }
 
 /* Fix title colors - white/light blue */
@@ -1458,14 +1458,14 @@ h2 {
 
 /* Company name shine effects */
 .famzy-shine {
-    color: #ff3366 !important;  /* Brighter, more vibrant red */
+    color: #5DDCD3 !important;  /* Vibrant teal blue */
     font-weight: bold;
-    background: linear-gradient(90deg, 
-        #ff3366 0%, 
-        #ff3366 35%, 
-        #ffffff 50%, 
-        #ff3366 65%, 
-        #ff3366 100%
+    background: linear-gradient(90deg,
+        #5DDCD3 0%,
+        #5DDCD3 35%,
+        #ffffff 50%,
+        #5DDCD3 65%,
+        #5DDCD3 100%
     );
     background-size: 200% 100%;
     background-clip: text;
