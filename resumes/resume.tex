@@ -1,0 +1,184 @@
+%-------------------------
+% Resume in LaTeX
+% Author: Syed Ali Raza
+%-------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins — tight but readable
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-6pt}\scshape\raggedright\large\bfseries\color[RGB]{31,78,121}
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-1pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-4pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in, itemsep=-1pt, topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Syed Ali Raza} \\ \vspace{3pt}
+    \small
+    \faPhone\ +1 (647) 996-4892 \enspace
+    \faEnvelope\ \href{mailto:ali-raza@live.ca}{ali-raza@live.ca} \enspace
+    \faGlobe\ \href{https://ali-raza.ca}{ali-raza.ca} \enspace
+    \faGithub\ \href{https://github.com/razas32}{github.com/razas32} \enspace
+    \faLinkedin\ \href{https://linkedin.com/in/razas32}{linkedin.com/razas32}
+\end{center}
+\vspace{-6pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {McMaster University}{Hamilton, ON}
+      {Bachelor of Computer Engineering \& Management (CO-OP)}{Sep 2020 -- June 2025}
+      \resumeItemListStart
+        \resumeItem{Recipient of the 2020 McMaster Entrance Honor Scholar Award}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+\vspace{2pt}
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=0pt]
+    \small{
+      \item \textbf{Languages:} C++, C, C\#, Verilog, Python, Java, JavaScript, CSS, TypeScript, SQL, MATLAB
+      \item \textbf{Frameworks:} React.js, Chrono, TensorFlow, Tkinter, NumPy, SciPy, Pillow, Matplotlib, Pandas, PyTorch
+      \item \textbf{Tools:} Git, GitHub, Quartus Prime, Simulink, ModelSim, Azure, AWS, Unreal Engine, PSpice, Salesforce, Visual Studio, Kubernetes, Docker, Tableau
+      \item \textbf{Relevant Courses:} Algorithm Design \& Analysis, Logic Design, Software Development, Microprocessor Systems, Advanced Probability, Electronic Circuits \& Devices II, Digital Systems Design, Control Systems, Communication Systems, Computer-Aided Engineering, Computer Architecture
+    }
+\end{itemize}
+\vspace{-4pt}
+
+%-----------WORK EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Data Analyst}{May 2023 -- Aug 2023}
+      {Vanguard Financial}{Mississauga, ON}
+      \resumeItemListStart
+        \resumeItem{Managed financial records for 30+ business clients using Python \& SQL to enhance data manipulation, analysis, and visualization across large financial datasets.}
+        \resumeItem{Automated bank statement reconciliation via Python, processing \textasciitilde1,000 transactions/week at \textgreater99\% accuracy; built complementary VBA macros to streamline Excel reporting.}
+        \resumeItem{Contributed to deploying a new SQL database system, overseeing data migration and improving organizational data integrity and query performance.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {B2B Marketing Manager}{July 2022 -- Nov 2022}
+      {The Rec Source}{GTA, ON}
+      \resumeItemListStart
+        \resumeItem{Drove sales initiatives for customized workforce solutions across the GTA, travelling to company warehouses and securing 4 high-value contracts exceeding \$100K each.}
+        \resumeItem{Initiated and led meetings with HR managers across Ontario, fostering strong client relationships while overseeing and mentoring a team of 3 marketing representatives.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {B2C Sales Consultant}{May 2022 -- Aug 2022}
+      {Go Sales}{GTA, ON}
+      \resumeItemListStart
+        \resumeItem{Secured 68 TELUS smart home security contracts via door-to-door marketing, achieving a \textasciitilde2\% conversion rate and exceeding quarterly sales targets by 44\%.}
+        \resumeItem{Engaged \textasciitilde100 prospects daily, generating 10\% average qualified leads through effective communication and a consultative understanding of client needs.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{Franky --- Rocket League ML Bot} $|$ \emph{Python, PyTorch, RLGym, NumPy}}{Jan 2022 -- Apr 2022}
+      \resumeItemListStart
+        \resumeItem{Built an autonomous bot using RLGym with engineered behaviors (positioning, velocity, movement) blended with high-level game strategy.}
+        \resumeItem{Applied deep reinforcement learning via PyTorch with custom state logic for real-time decision making across diverse in-game scenarios.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Software Defined Radio} $|$ \emph{Linux, C++, Python, Gnuplot}}{Feb 2024 -- Apr 2024}
+      \resumeItemListStart
+        \resumeItem{Developed DSP algorithms for mono/stereo FM demodulation and RDS processing in a team of four; implemented in C++ and validated with Python on a Raspberry Pi.}
+        \resumeItem{Optimized throughput using multithreading to meet strict real-time latency constraints within the Linux ecosystem.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Hardware-based Image Decompressor} $|$ \emph{Verilog, Quartus Prime, ModelSim}}{Oct 2023 -- Dec 2023}
+      \resumeItemListStart
+        \resumeItem{Designed a real-time Verilog FSM decompression pipeline handling YUV-to-RGB conversion within tight hardware resource and latency budgets.}
+        \resumeItem{Managed UART data flow to an Altera DE2-115 FPGA for SRAM decoding and storage, then routed output to a VGA controller for live display.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{LIDAR Spatial Mapper} $|$ \emph{C, Python, NumPy, Open3D}}{Feb 2023 -- Apr 2023}
+      \resumeItemListStart
+        \resumeItem{Engineered a 3D scanner using a VL531X ToF sensor, 28BYJ-48 stepper motor, and MSP432E401Y microcontroller for enclosed-area spatial mapping.}
+        \resumeItem{Implemented I2C \& UART protocols for sensor-to-PC transfer; converted distance data to Cartesian coordinates and rendered 3D point clouds with Open3D.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Model Pacemaker} $|$ \emph{MATLAB, Python, Simulink}}{Sep 2022 -- Dec 2022}
+      \resumeItemListStart
+        \resumeItem{Co-developed a digital pacemaker simulation in a team of four using MATLAB Simulink, implementing atrial/ventricular pacing and multi-mode sensing algorithms.}
+        \resumeItem{Designed a GUI in Python with Tkinter and pySerial for real-time system interfacing and operational parameter configuration.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\end{document}

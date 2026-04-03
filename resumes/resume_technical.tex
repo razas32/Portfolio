@@ -1,0 +1,206 @@
+%-------------------------
+% Technical Resume — Ali Raza
+%-------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+% ── Fonts ────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[default]{sourcesanspro}
+\usepackage[tracking=true]{microtype}
+\SetTracking{encoding=*,shape=sc}{40}   % subtle letter-spacing on small caps
+
+% ── Layout ───────────────────────────────────────────
+\usepackage[empty]{fullpage}
+\usepackage{geometry}
+\geometry{top=0.45in, bottom=0.45in, left=0.55in, right=0.55in}
+
+% ── Colors ───────────────────────────────────────────
+\usepackage[dvipsnames]{xcolor}
+\definecolor{accent}{RGB}{22, 52, 100}      % deep navy — name, titles, dates, bullets
+\definecolor{company}{RGB}{55, 55, 55}      % dark gray — company names
+\definecolor{muted}{RGB}{105, 105, 105}     % medium gray — city, separators
+\definecolor{light}{RGB}{165, 165, 165}     % light gray — dividers, pipes
+
+% ── Packages ─────────────────────────────────────────
+\usepackage{latexsym}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{ragged2e}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\parindent}{0pt}
+
+% ── Section headers ───────────────────────────────────
+% Bold small-caps navy text + full-width light rule, with a small gap below
+\titleformat{\section}{
+  \vspace{-4pt}\large\bfseries\scshape\color{accent}
+}{}{0em}{}[{
+  \vspace{-4pt}\color{light}\rule{\linewidth}{0.5pt}\vspace{-1pt}
+}]
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+
+%─────────────────────────────────────────────────────
+% Macros
+%─────────────────────────────────────────────────────
+
+% Job: Title  |  Company  |  City  ............  Date
+\newcommand{\job}[4]{%
+  \vspace{1pt}
+  \noindent
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{\textcolor{accent}{#1}}\enspace
+    {\small\textcolor{light}{$|$}\enspace\textit{\textcolor{company}{#3}}\enspace
+    \textcolor{light}{$|$}\enspace\textcolor{muted}{#4}}
+    & \small\textbf{\textcolor{accent}{#2}}
+  \end{tabular*}%
+  \vspace{-4pt}
+}
+
+% Education: no date
+\newcommand{\edu}[3]{%
+  \vspace{1pt}
+  \noindent
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \small\textbf{\textcolor{accent}{#2}}
+  \end{tabular*}\\[-2pt]
+  {\small\textit{\textcolor{muted}{#3}}}%
+  \vspace{-2pt}
+}
+
+% Project: Name  |  Stack  ..............  Date
+\newcommand{\project}[2]{%
+  \vspace{1pt}
+  \noindent
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \small#1 & \small\textbf{\textcolor{accent}{#2}}
+  \end{tabular*}%
+  \vspace{-4pt}
+}
+
+% Bullet
+\newcommand{\bul}[1]{%
+  \item\small\justifying #1\vspace{-1pt}%
+}
+
+% List environments
+\newcommand{\seclist}{\begin{itemize}[leftmargin=0pt,label={},topsep=0pt,parsep=0pt]}
+\newcommand{\seclistend}{\end{itemize}}
+
+\newcommand{\bullist}{%
+  \begin{itemize}[leftmargin=14pt,label={\small\textcolor{accent}{$\bullet$}},
+    itemsep=0pt,topsep=3pt,parsep=0pt]%
+}
+\newcommand{\bullistend}{\end{itemize}\vspace{4pt}}
+
+%═════════════════════════════════════════════════════
+\begin{document}
+
+% ── Header ───────────────────────────────────────────
+\begin{center}
+  {\fontsize{26}{30}\selectfont\bfseries\scshape\color{accent} Ali Raza}\\[5pt]
+  \small\textcolor{muted}{%
+    \faPhone\ \href{tel:16479964892}{+1 (647) 996-4892}\enspace
+    \textcolor{light}{$\cdot$}\enspace
+    \faEnvelope\ \href{mailto:ali-raza@live.ca}{ali-raza@live.ca}\enspace
+    \textcolor{light}{$\cdot$}\enspace
+    \faGlobe\ \href{https://ali-raza.ca}{ali-raza.ca}\enspace
+    \textcolor{light}{$\cdot$}\enspace
+    \faGithub\ \href{https://github.com/razas32}{razas32}\enspace
+    \textcolor{light}{$\cdot$}\enspace
+    \faLinkedin\ \href{https://linkedin.com/in/razas32}{razas32}%
+  }
+\end{center}
+\vspace{-2pt}
+
+% ── Education ─────────────────────────────────────────
+\section{Education}
+\seclist
+  \item\edu{McMaster University}{Apr 2026}%
+            {Bachelor of Computer Engineering \& Management (CO-OP)}
+  \bullist
+    \bul{Recipient of the 2020 McMaster Entrance Honor Scholar Award}
+  \bullistend
+\seclistend
+
+% ── Skills ────────────────────────────────────────────
+\section{Skills}
+\vspace{3pt}
+\begin{itemize}[leftmargin=0pt,label={},itemsep=2pt,topsep=0pt,parsep=0pt]
+  \small
+  \item\textbf{Languages:}\enspace TypeScript, JavaScript, Python, C++, C, Verilog, Java, SQL
+  \item\textbf{Frameworks \& Libraries:}\enspace React, React Native, Expo, Next.js, Tailwind CSS, Zustand, Zod, PyTorch, NumPy, Pandas
+  \item\textbf{Infrastructure \& Tools:}\enspace PostgreSQL, Supabase, AWS S3, Upstash Redis, GitHub Actions, Vercel, Docker, Sentry, PostHog, Git
+\end{itemize}
+\vspace{2pt}
+
+% ── Work Experience ───────────────────────────────────
+\section{Work Experience}
+\seclist
+
+  \item\job{Founder \& CEO}{Nov 2025 -- Present}{Famzy.ai}{Mississauga, ON}
+  \bullist
+    \bul{Built Famzy end-to-end - a real-time family superapp on mobile with live location sharing, shared calendars, chat, task management, media galleries, document storage and more - engineered as a TypeScript monorepo across Expo/React Native and a Next.js backend using Supabase.}
+    \bul{Engineered background geofencing that works with the app closed, multi-device realtime presence, Google and Outlook calendar sync, and signed media upload pipelines, using EAS to manage iOS builds and releases.}
+    \bul{Led a team of 4 as the technical founder - defined the product, system architecture, drove feature planning, and managed CI/CD while being the primary contributor at every stage of the project.}
+  \bullistend
+
+  \item\job{IT Technician}{Jan 2025 -- Apr 2025}{Septodont}{Cambridge, ON}
+  \bullist
+    \bul{Handled day-to-day IT support as the main end-user contact, managing software licensing, access provisioning, and onboarding and offboarding across departments, while escalating infrastructure issues to the server and networking team.}
+    \bul{Co-led a print system rollout across Canada, the U.S., and France, helped push through a company-wide MFA and ZTNA security upgrade, and built Power BI dashboards that gave the IT team real visibility into workload and performance.}
+  \bullistend
+
+  \item\job{Data Analyst}{May 2023 -- Aug 2023}{Vanguard Financial}{Mississauga, ON}
+  \bullist
+    \bul{Built an internal payroll tool from scratch that replaced manual data entry across 30+ client accounts - standardized intake forms, automated the export pipeline, and removed human error from the reconciliation process entirely.}
+    \bul{Automated bank statement reconciliation in Python, processing \textasciitilde1{,}000 transactions/week at \textgreater99\% accuracy, and built the underlying SQL database from scratch to organize client financial data and support ongoing reporting.}
+  \bullistend
+
+\seclistend
+
+% ── Projects ─────────────────────────────────────────
+\section{Projects}
+\seclist
+
+  \item\project{\textbf{Ivy - Student Success Platform}\enspace\textcolor{light}{$|$}\enspace\textit{\small Next.js, TypeScript, React, OpenAI API, Tailwind CSS}}{Sep 2025 -- Apr 2026}
+  \bullist
+    \bul{Built an AI ingestion pipeline that parses uploaded course materials - syllabi, readings, slides - into structured tasks, deadlines, flashcards, and quizzes, all surfaced through a study dashboard with calendar, task tracking, and Pomodoro tooling.}
+    \bul{Built a resume analyzer and AI-powered cover letter generator that tailors output to job descriptions; implemented authenticated user flows, persistent typed state via Supabase, and configurable OpenAI integration so students can connect their own API keys.}
+  \bullistend
+
+  \item\project{\textbf{Franky}\enspace\textcolor{light}{$|$}\enspace\textit{\small Python, PyTorch, RLGym, NumPy}}{Feb 2024 -- Jun 2024}
+  \bullist
+    \bul{Built an autonomous Rocket League bot using RLGym, engineering precise behaviors for positioning, velocity management, and aerial mechanics, drawing on strategic patterns developed through top 0.1\% competitive gameplay experience.}
+    \bul{Applied deep reinforcement learning via PyTorch using a custom reward shaping function and state-action logic, enabling real-time adaptive decision making and consistent bot performance across varied and unpredictable in-game scenarios.}
+  \bullistend
+
+  \item\project{\textbf{Software Defined Radio}\enspace\textcolor{light}{$|$}\enspace\textit{\small Linux, C++, Python, Gnuplot}}{Feb 2024 -- Apr 2024}
+  \bullist
+    \bul{Developed DSP algorithms for mono/stereo FM demodulation and RDS data processing as part of a four-person team, implemented in C++ on a Raspberry Pi and validated against Python reference implementations using Gnuplot visualizations.}
+    \bul{Improved pipeline data throughput through multithreading and stage-level profiling to satisfy strict real-time latency constraints, optimizing each processing stage within the Linux ecosystem to meet system performance requirements.}
+  \bullistend
+
+  \item\project{\textbf{Hardware-based Image Decompressor}\enspace\textcolor{light}{$|$}\enspace\textit{\small Verilog, Quartus Prime, ModelSim}}{Oct 2023 -- Dec 2023}
+  \bullist
+    \bul{Designed a real-time Verilog FSM decompression pipeline performing YUV-to-RGB color space conversion within tight hardware resource and timing budgets, functionally verified through ModelSim simulation on an Altera DE2-115 FPGA.}
+    \bul{Managed end-to-end UART data flow for SRAM decoding and storage, directing the decoded output stream to a VGA controller for real-time monitor display while resolving memory addressing, bandwidth, and pipeline timing constraints.}
+  \bullistend
+
+\seclistend
+
+\end{document}
